@@ -22,7 +22,7 @@ namespace ViewModels
         public bool IsAutomatic { get; set; } = true;
         public bool IsElectric { get; set; }
         public int FuelEfficiencyCity { get; set; }
-        public int FuelEfficiencyHwy { get; set; }
+        public int FuelEfficiencyHighway { get; set; }
         public string ExteriorColor { get; set; } = null!;
         public string InteriorColor { get; set; } = null!;
         public string Engine { get; set; } = null!;
