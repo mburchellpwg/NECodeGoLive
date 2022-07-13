@@ -32,12 +32,19 @@ namespace Business.Managers
 
         public async Task<int> DeleteAsync(int id)
         {
-            throw new NotImplementedException();
+            var autoInfo = await _context.Autos.FindAsync(id);
+            if (autoInfo != null)
+            {
+                _context.Autos.Remove(autoInfo);
+                return await _context.SaveChangesAsync();
+            }
+
+            return default;
         }
 
         public async Task<IEnumerable<AutoVM>> GetAllAsync()
         {
-            throw new NotImplementedException();
+            return _mapper.Map<IEnumerable<Auto>, IEnumerable<AutoVM>>(await _context.Autos.ToListAsync());
         }
 
         public async Task<AutoVM> GetAsync(int id)
@@ -54,7 +61,13 @@ namespace Business.Managers
 
         public async Task<AutoVM> UpdateAsync(AutoVM obj)
         {
-            throw new NotImplementedException();
+            var autoInfo = await _context.Autos.FindAsync(obj.Id);
+            var autoMapped = _mapper.Map<AutoVM, Auto>(obj, autoInfo!);
+
+            var updatedAuto = _context.Autos.Update(autoMapped);
+            await _context.SaveChangesAsync();
+
+            return _mapper.Map<Auto, AutoVM>(updatedAuto.Entity);
 
         }
     }
