@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32611.2
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MudServer", "MudServer\MudServer.csproj", "{2E0216C2-53F2-43AE-B7FB-9F705101EF22}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MudServer", "MudServer\MudServer.csproj", "{2E0216C2-53F2-43AE-B7FB-9F705101EF22}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1-UI", "1-UI", "{796EFAA3-063B-4066-9BD7-5DBCF96BBAA1}"
 EndProject
@@ -15,11 +15,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4-Common", "4-Common", "{09
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0-SolutionItems", "0-SolutionItems", "{AE359768-9D65-4DD3-9DFF-D5E26E480823}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Business", "Business\Business.csproj", "{DFD8BE8C-0419-4A7A-97A1-110C7B53714D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Business", "Business\Business.csproj", "{DFD8BE8C-0419-4A7A-97A1-110C7B53714D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "DataAccess\DataAccess.csproj", "{DC1F9D74-6E1F-4130-833C-B6572CB4EE4C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAccess", "DataAccess\DataAccess.csproj", "{DC1F9D74-6E1F-4130-833C-B6572CB4EE4C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ViewModels", "ViewModels\ViewModels.csproj", "{22CC44EB-EE4F-41F0-9734-9796043D6247}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ViewModels", "ViewModels\ViewModels.csproj", "{22CC44EB-EE4F-41F0-9734-9796043D6247}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
