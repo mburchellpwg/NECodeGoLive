@@ -16,6 +16,7 @@ namespace DataAccess.Data
         public string Model { get; set; }
         public int Year { get; set; }
         public int Door { get; set; }
+        public bool IsAutomatic { get; set; } = true;
         public bool IsElectric { get; set; }
         public int FuelEfficiencyCity { get; set; }
         public int FuelEfficiencyHighway { get; set; }
