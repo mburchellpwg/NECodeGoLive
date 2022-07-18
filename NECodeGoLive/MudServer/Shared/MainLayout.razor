@@ -1,17 +1,16 @@
 ﻿@inherits LayoutComponentBase
 
-<MudThemeProvider />
+<MudThemeProvider @bind-IsDarkMode="@_isDarkMode" Theme="CustomTheme" />
 <MudDialogProvider />
 <MudSnackbarProvider />
 
 <MudLayout>
     <MudAppBar Elevation="0">
-        <MudIconButton Icon="@Icons.Material.Filled.Menu" Color="Color.Inherit" Edge="Edge.Start" OnClick="@((e) => DrawerToggle())" />
+        <MudIconButton @bind-Icon="@_currentIcon" Color="Color.Inherit" Edge="Edge.Start" OnClick="@((e) => DrawerToggle())" />
         <MudSpacer />
-        <MudIconButton Icon="@Icons.Custom.Brands.MudBlazor" Color="Color.Inherit" Link="https://mudblazor.com/" Target="_blank" />
-        <MudIconButton Icon="@Icons.Custom.Brands.GitHub" Color="Color.Inherit" Link="https://github.com/MudBlazor/MudBlazor/" Target="_blank" />
+        <MudSwitch @bind-Checked="@_isDarkMode" Color="Color.Primary" Class="ma-4" T="bool" Label="Toggle Light/Dark Mode" />
     </MudAppBar>
-    <MudDrawer @bind-Open="_drawerOpen" Elevation="1">
+    <MudDrawer ClipMode="DrawerClipMode.Docked" @bind-Open="_drawerOpen" Elevation="1">
         <MudDrawerHeader>
             <MudText Typo="Typo.h6">MudServer</MudText>
         </MudDrawerHeader>
@@ -25,10 +24,41 @@
 </MudLayout>
 
 @code {
+    // colors
+    static MudColor DFS_Green = "#1D5214";
+    static MudColor DFS_Blue = "#1B4B9F";
+    static MudColor DFS_Black = "#101823";
+
     bool _drawerOpen = true;
+    bool _isDarkMode = false;
+    string _currentIcon = Icons.Material.Filled.MenuOpen;
 
     void DrawerToggle()
     {
         _drawerOpen = !_drawerOpen;
+        _currentIcon = _drawerOpen ? Icons.Material.Filled.MenuOpen : Icons.Material.Filled.Menu;
     }
+
+    MudTheme CustomTheme = new MudTheme()
+    {
+        Palette = new Palette()
+        {
+            Primary = DFS_Blue,
+            Secondary = DFS_Green,
+            AppbarBackground = DFS_Blue,
+            Black = DFS_Black,
+            Dark = DFS_Black,
+            TextPrimary = DFS_Black,
+            DrawerText = DFS_Black
+        },
+        PaletteDark = new Palette()
+        {
+            Primary = DFS_Blue,
+            Secondary = DFS_Green,
+            AppbarBackground = DFS_Blue,
+            Background = DFS_Black,
+            Black = "#ffffff",
+            TextPrimary = "#ffffff"
+        }
+    };
 }
